@@ -63,7 +63,7 @@ function ChatRoom() {
 
   const [messages] = useCollectionData(query, {idField: 'id'});
 
-  const [formValue, setFormValue] = useState('');
+  const [formValue, setFormValue] = useAuthState('');
 
   const sendMessage = async(e) => {
 
