@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useRef, useState } from 'react';
 import './App.css';
 import firebase from 'firebase/app';
 import 'firebase/firestore';
@@ -57,13 +57,13 @@ function SignOut() {
 }
 
 function ChatRoom() {
-
+  
   const messagesRef = firestore.collection('messages');
   const query = messagesRef.orderBy('createAt').limit(25);
 
   const [messages] = useCollectionData(query, {idField: 'id'});
 
-  const [formValue, setFormValue] = useAuthState('');
+  const [formValue, setFormValue] = useState('');
 
   const sendMessage = async(e) => {
 
