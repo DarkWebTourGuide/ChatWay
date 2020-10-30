@@ -39,7 +39,7 @@ function App() {
 }
 
 function SignIn() {
-  const singInWithGoogle = () => {
+  const signInWithGoogle = () => {
     const provider = new firebase.auth.GoogleAuthProvider();
     auth.signInWithPopup(provider);
   }
@@ -78,6 +78,7 @@ function ChatRoom() {
       photoURL
     });
 
+    setFormValue('');
 
   }
   return (
