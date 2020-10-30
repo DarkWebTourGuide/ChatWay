@@ -28,8 +28,9 @@ function App() {
 
   return (
     <div className="App">
-      <header className="App-header">
-
+      <header>
+      <h1>ChatWay</h1>
+        <SignOut />
       </header>
       <section >
         {user ? <ChatRoom /> : <SignIn />}
@@ -52,21 +53,20 @@ function SignIn() {
 function SignOut() {
   return auth.currentUser && (
 
-    <button onClick={() => auth.signOut()}>Sign Out</button>
+    <button className="sign-out" onClick={() => auth.signOut()}>Sign Out</button>
   )
 }
 
 function ChatRoom() {
-  
+  const dummy = useRef();
   const messagesRef = firestore.collection('messages');
   const query = messagesRef.orderBy('createAt').limit(25);
 
-  const [messages] = useCollectionData(query, {idField: 'id'});
+  const [messages] = useCollectionData(query, { idField: 'id'});
 
   const [formValue, setFormValue] = useState('');
 
-  const sendMessage = async(e) => {
-
+  const sendMessage = async (e) => {
     e.preventDefault();
 
     const { uid, photoURL } = auth.currentUser;
@@ -79,28 +79,27 @@ function ChatRoom() {
     });
 
     setFormValue('');
-
+    dummy.current.scrollIntoView({ behavior: 'smooth' });
   }
   return (
     <>
-      <div>
+      <main>
         {messages && messages.map(msg => <ChatMessage key={msg.id} message={msg} />)}
-      </div>
 
-      <form>
+        <span ref={dummy}></span>
 
-        <input value={formValue} onChange={(e) => setFormValue(e.target.value)} />
+      </main>
 
-        <button type="submit">🚀</button>
+      <form onSubmit={sendMessage}>
+
+        <input value={formValue} onChange={(e) => setFormValue(e.target.value)} placeholder="What's on your mind?" />
+
+        <button type="submit" disabled={!formValue}>🚀🕊️</button>
 
       </form>
-      <div>
+ 
 
-      </div>
-
-    </>
-
-  )
+    </>)
 }
 
 function ChatMessage(props) {
@@ -108,12 +107,12 @@ function ChatMessage(props) {
 
   const messageClass = uid === auth.currentUser.uid ? 'sent' : 'received';
 
-  return (
+  return (<>
     <div className={`message ${messageClass}`}>
-      <img src={photoURL} />
+      <img src={photoURL || 'https://api.adorable.io/avatars/23/abott@adorable.png'} />
       <p>{text}</p>
     </div>
-  )
+  </>)
 }
 
 export default App;
