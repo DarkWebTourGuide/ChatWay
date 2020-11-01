@@ -1,5 +1,11 @@
+@import url("https://fonts.googleapis.com/css2?family=Quicksand&display=swap");
+
+* {
+  font-family: "Quicksand", sans-serif;
+}
+
 body {
-  background-color: #282c34;
+  background-color: white;
 }
 
 .App {
@@ -9,14 +15,13 @@ body {
 }
 
 .App header {
-  background-color: #181717;
-  height: 10vh;
+  background-color: #fff;
+  height: 12vh;
   min-height: 50px;
-  color: white;
-  position: fixed;
+  color: black;
+  position: relative;
   width: 100%;
-  max-width: 728px;
-  top: 0;
+  top: 10px;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -30,7 +35,7 @@ body {
   flex-direction: column;
   justify-content: center;
   min-height: 100vh;
-  background-color: rgb(40, 37, 53);
+  background-color: white;
 }
 
 main {
@@ -43,7 +48,7 @@ main {
 }
 
 main::-webkit-scrollbar {
-  width: 0.25rem;
+  width: 0.02rem;
 }
 
 main::-webkit-scrollbar-track {
@@ -55,37 +60,46 @@ main::-webkit-scrollbar-thumb {
 }
 
 form {
-  height: 10vh;
+  height: 8vh;
   position: fixed;
-  bottom: 0;
-  background-color: rgb(24, 23, 23);
+  bottom: 10px;
+  background-color: white;
   width: 100%;
   max-width: 728px;
-  display: flex;
-  font-size: 1.5rem;
+  display: inline-flex;
+  font-size: 1.25rem;
+  justify-content: center;
 }
 
 form button {
-  width: 20%;
-  background-color: rgb(56, 56, 143);
+  width: 10%;
+  background-color: rgb(73, 223, 203);
+  border-radius: 33px;
+  margin: 4px;
+  padding: 1px;
 }
 
 input {
   line-height: 1.5;
-  width: 100%;
-  font-size: 1.5rem;
-  background: rgb(58, 58, 58);
-  color: white;
+  width: 60%;
+  display: inline-flex;
+  text-indent: 10px;
+  font-size: 1.25rem;
+  background: white;
+  color: grey;
   outline: none;
-  border: none;
+  border: 1px solid black;
+  border-radius: 33px;
   padding: 0 10px;
+  margin: 5px 15px;
 }
 
 button {
   background-color: #282c34; /* Green */
   border: none;
+  border-radius: 33px;
   color: white;
-  padding: 15px 32px;
+  padding: 12px 32px;
   text-align: center;
   text-decoration: none;
   display: inline-block;
@@ -94,7 +108,6 @@ button {
 }
 
 button:disabled {
-  opacity: 0.5;
   cursor: not-allowed;
 }
 
@@ -103,6 +116,7 @@ button:disabled {
   background: white;
   max-width: 400px;
   margin: 0 auto;
+  border-radius: 25px;
 }
 
 ul,
@@ -115,7 +129,7 @@ p {
   max-width: 500px;
   margin-bottom: 12px;
   line-height: 24px;
-  padding: 10px 20px;
+  padding: 5px 20px;
   border-radius: 25px;
   position: relative;
   color: white;
@@ -125,6 +139,7 @@ p {
 .message {
   display: flex;
   align-items: center;
+  margin-bottom: 15px;
 }
 
 .sent {
@@ -137,8 +152,8 @@ p {
   align-self: flex-end;
 }
 .received p {
-  background: #e5e5ea;
-  color: black;
+  background: #969699;
+  color: white;
 }
 
 img {

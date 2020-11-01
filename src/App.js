@@ -29,7 +29,8 @@ function App() {
   return (
     <div className="App">
       <header>
-      <h1>ChatWay</h1>
+      <h1>ChatWay <img src="/favicon.ico" alt="Chatway" /></h1>
+      
         <SignOut />
       </header>
       <section >
@@ -60,7 +61,7 @@ function SignOut() {
 function ChatRoom() {
   const dummy = useRef();
   const messagesRef = firestore.collection('messages');
-  const query = messagesRef.orderBy('createAt').limit(25);
+  const query = messagesRef.orderBy('createdAt').limit(25);
 
   const [messages] = useCollectionData(query, { idField: 'id'});
 
@@ -87,7 +88,7 @@ function ChatRoom() {
         
         {messages && messages.map(msg => <ChatMessage key={msg.id} message={msg} />)}
 
-        <div ref={dummy}></div>
+        <span ref={dummy}></span>
 
       </main>
 
@@ -110,7 +111,7 @@ function ChatMessage(props) {
 
   return (<>
     <div className={`message ${messageClass}`}>
-      <img src={photoURL || 'https://api.adorable.io/avatars/23/abott@adorable.png'} />
+      <img src={photoURL || '/favicon.ico'} alt="userimage"/>
       <p>{text}</p>
     </div>
   </>)
