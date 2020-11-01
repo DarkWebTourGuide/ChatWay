@@ -25,7 +25,7 @@ exports.detectEvilUsers = functions.firestore
 
         const userData = (await userRef.get()).data();
 
-        if (userData.msgCount >= 7) {
+        if (userData.msgCount >= 50) {
             await db.collection('banned').doc(uid).set({});
         } else {
             await userRef.set({ msgCount: (userData.msgCount || 0) + 1 })
