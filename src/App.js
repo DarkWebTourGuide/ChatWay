@@ -34,7 +34,9 @@ function App() {
         <SignOut />
       </header>
       <section >
+      <h3>Real-Time Messaging 👋</h3>
         {user ? <ChatRoom /> : <SignIn />}
+        <h5>ChrisAdams.io</h5>
       </section>
     </div>
   );
@@ -99,7 +101,7 @@ function ChatRoom() {
         <button type="submit" disabled={!formValue}>🚀</button>
 
       </form>
- 
+      
 
     </>)
 }

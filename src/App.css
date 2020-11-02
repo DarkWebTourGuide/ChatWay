@@ -19,9 +19,9 @@ body {
   height: 12vh;
   min-height: 50px;
   color: black;
-  position: relative;
+  position: sticky;
   width: 100%;
-  top: 10px;
+  top: 0;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -62,7 +62,7 @@ main::-webkit-scrollbar-thumb {
 form {
   height: 8vh;
   position: fixed;
-  bottom: 10px;
+  bottom: 0;
   background-color: white;
   width: 100%;
   max-width: 728px;
@@ -72,11 +72,11 @@ form {
 }
 
 form button {
-  width: 10%;
+  width: 15%;
   background-color: rgb(73, 223, 203);
   border-radius: 33px;
-  margin: 4px;
-  padding: 1px;
+  margin: 2px;
+  padding: 2px;
 }
 
 input {
@@ -99,7 +99,7 @@ button {
   border: none;
   border-radius: 33px;
   color: white;
-  padding: 12px 32px;
+  padding: 8px 28px;
   text-align: center;
   text-decoration: none;
   display: inline-block;
