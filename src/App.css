@@ -17,7 +17,7 @@ body {
 .App header {
   background-color: #fff;
   height: 12vh;
-  min-height: 50px;
+  min-height: 40px;
   color: black;
   position: sticky;
   width: 100%;
@@ -40,8 +40,8 @@ body {
 
 main {
   padding: 10px;
-  height: 80vh;
-  margin: 10vh 0 10vh;
+  height: 100vh;
+  margin: 5vh 0 10vh;
   overflow-y: scroll;
   display: flex;
   flex-direction: column;
@@ -149,7 +149,6 @@ p {
 .sent p {
   color: white;
   background: #0b93f6;
-  align-self: flex-end;
 }
 .received p {
   background: #969699;
