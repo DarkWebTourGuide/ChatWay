@@ -30,13 +30,12 @@ function App() {
     <div className="App">
       <header>
       <h1>ChatWay <img src="/favicon.ico" alt="Chatway" /></h1>
-      
         <SignOut />
       </header>
       <section >
-      <h3>Real-Time Messaging 👋</h3>
+        <h3>Real-time Messaging 👋</h3>
         {user ? <ChatRoom /> : <SignIn />}
-        <h5>ChrisAdams.io</h5>
+        <h4>ChrisAdams.io</h4>
       </section>
     </div>
   );
